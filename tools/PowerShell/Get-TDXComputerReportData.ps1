@@ -1,9 +1,21 @@
 
+# Parameter help description
+[CmdletBinding()]
+param (
+    [Parameter()]
+    [String]
+    $token
+)
+
+if (! $token) {
+    $token = Read-Host "Please enter your bearer token"  
+}
+
 
 $endpoint = "https://help.ithaca.edu/TDWebApi/api/reports/1966?withData=true"
 # Grab a token string from https://help.ithaca.edu/TDWebApi/api/auth/loginsso
 # Replace YOUR_BEARER_TOKEN with the token string
-$token = "YOUR_BEARER_TOKEN"
+
 
 $headers = @{
     "Authorization" = "Bearer $token"
