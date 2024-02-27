@@ -8,7 +8,8 @@ param (
 )
 
 if (! $token) {
-    $token = Read-Host "Please enter your bearer token"  
+    Write-Output "Grab a token string from https://help.ithaca.edu/TDWebApi/api/auth/loginsso"
+    $token = Read-Host "Paste bearer token"  
 }
 
 
